@@ -1,0 +1,19 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    {% block header_extends %}{% endblock %}
+</head>
+<body>
+    <div class="nav">
+        <a class="logo" href={% url 'home' %}>个人博客网站</a>
+        <a href="/">首页</a>
+        <a href={% url 'blog_list' %}>博客</a>
+    </div>
+    {% block content %}{% endblock %}
+</body>
+{#<link rel="stylesheet" href="/static/css/base.css">#}
+<link rel="stylesheet" href="{% static 'css/base.css' %}">
+</html>
